@@ -563,11 +563,13 @@ class Client
                 throw new TimedOutException('Read timed out');
             }
 
+            /** Not relevant for socket_create()
             if ($info['unread_bytes'] == 0
                     && $info['blocked']
                     && $info['eof']) {
                 throw new ForbiddenException('Not in white list. Check listen.allowed_clients.');
             }
+            */
 
             throw new \Exception('Read failed');
         }
